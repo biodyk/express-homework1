@@ -1,7 +1,13 @@
 const express = require('express');
+const session = require('express-session');
 
 const app = express();
 
+app.use(session({
+    secret: "amugeuna",
+    resave: false,
+    saveUninitialized: true
+}));
 app.set('view engine','ejs');
 app.use('/css', express.static(__dirname + '/css'));
 app.use(express.urlencoded({extended: true}));
@@ -10,7 +16,14 @@ app.get('/hello',function(req,res){
     res.render('hello',{name:req.query.nameQuery});
 });
 
+app.get('/user', (req,res) => {
+    res.render('user',{name: req.session.item}
+    );
+});
 app.get('/', (req, res) => {
+    if(req.session.item !== undefined){
+        return res.redirect("/user");
+    }
     res.render(`index`);
 });
 
@@ -33,6 +46,7 @@ app.post('/result', (req, res) => {
     console.log(req.body);
     if(req.body["ID"] === 'biodyk') {
         if(req.body["password"] === 'ab1212') {
+            req.session.item = req.body["ID"];
             return res.send("login success!");
         }
     }
