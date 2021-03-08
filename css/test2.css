@@ -1,0 +1,9 @@
+.img {
+    position: relative; left: calc(50% - 100px);
+}
+.img2{
+    position: relative; left: calc(50% - 250px);
+}
+.par {
+    width: 400px;margin: auto;text-align:center; padding: 20px; 
+}
