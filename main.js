@@ -30,7 +30,9 @@ app.get('/', (req, res) => {
 app.get('/weather', function(req, res) {
     res.render('weather');
 })
-
+app.get('/balance',function(req, res){
+    res.render('select');
+})
 app.get('/result', (req, res) => {
     console.log(req.query["ID"], req.query.name);
     if(req.query["ID"] === 'biodyk') {
@@ -53,6 +55,17 @@ app.post('/result', (req, res) => {
 
     return res.send("login failed");
 });
+
+app.post('/select', (req, res) => {
+    console.log(req.body);
+    if(req.body["eman"] === '1'){
+        return res.send("you choose 1!!!");
+    }
+    console.log(req.body);
+    if(req.body["eman"] === '2'){
+        return res.send("you choose 2!!!");
+    }
+})
 
 app.listen(3000, () => {
   console.log("server on");  

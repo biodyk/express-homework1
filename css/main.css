@@ -1,0 +1,23 @@
+div{
+    text-align: center;
+}
+.main{
+    width: 1400px;
+    height:100px;
+    font-size: 400%;
+    font-weight: bold;
+}
+.north{
+    font-size: 200%;
+    font-weight: bold;
+    background-color: red;
+    width: 1400px;
+    height: 400px;
+}
+.south{
+    font-size: 200%;
+    font-weight: bold;
+    background-color: blue;
+    width: 1400px;
+    height: 400px;
+}
