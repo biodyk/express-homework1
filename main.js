@@ -10,6 +10,7 @@ app.use(session({
 }));
 app.set('view engine','ejs');
 app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
 app.use(express.urlencoded({extended: true}));
 
 app.get('/hello',function(req,res){
@@ -58,15 +59,11 @@ app.post('/result', (req, res) => {
 
 app.post('/select', (req, res) => {
     console.log(req.body);
-    if(req.body["eman"] === '1'){
-        return res.send("you choose 1!!!");
-    }
-    console.log(req.body);
-    if(req.body["eman"] === '2'){
-        return res.send("you choose 2!!!");
-    }
+    
+    res.send("you choose " + req.body["eman"] + "!!!");
 })
 
 app.listen(3000, () => {
   console.log("server on");  
 });
+

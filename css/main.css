@@ -2,22 +2,30 @@ div{
     text-align: center;
 }
 .main{
-    width: 1400px;
+    width: 100vw;
     height:100px;
     font-size: 400%;
     font-weight: bold;
+}
+body{
+    margin: 0;
 }
 .north{
     font-size: 200%;
     font-weight: bold;
     background-color: red;
-    width: 1400px;
-    height: 400px;
+    width: 100vw;
+    padding-top: 200px;
+    height: 220px;
 }
 .south{
     font-size: 200%;
     font-weight: bold;
     background-color: blue;
-    width: 1400px;
-    height: 400px;
+    width: 100vw;
+    padding-top: 200px;
+    height: 220px;
+}
+.hidden{
+    display: none;
 }
